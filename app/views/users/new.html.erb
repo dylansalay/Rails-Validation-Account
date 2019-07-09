@@ -1,0 +1,24 @@
+<h1>Please enter user information</h1>
+
+<form action="/submit_user" method="post">
+
+    <label for="first_name">First Name:</label>
+    <input id="first_name" type="text" name="user[first_name]">
+
+    <label for="last_name">Last Name:</label>
+    <input id="last_name" type="text" name="user[last_name]">
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="user[email]">
+
+    <label for="phone_number">Phone Number:</label>
+    <input id="phone_number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="user[phone_number]">
+
+    <input type="submit" value="Submit">
+
+</form>
+
+
+<% if @user.errors %>
+<%= @user.errors.full_messages %>
+<% end %>
